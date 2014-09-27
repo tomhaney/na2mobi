@@ -9,6 +9,6 @@ You can put the mobi file onto the Kindle and navigate through the
 articles with the right rocker on the 5 way pad.
 
 ## Dependencies
-lynx
-pandoc
-calibre
+- lynx
+- pandoc
+- calibre
