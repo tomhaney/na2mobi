@@ -2,7 +2,9 @@
 # script depends on lynx, pandoc, and calibre
 set -x #echo on
 # download the show notes as a text file
-lynx -dump http://now.nashownotes.com > na-now.txt
+lynx -dump http://now.nashownotes.com > na-now-pre.txt
+# remove non-printable characters (e.g episode 658) on advice from http://alvinalexander.com/blog/post/linux-unix/how-remove-non-printable-ascii-characters-file-unix
+tr -cd '\11\12\15\40-\176' < na-now-pre.txt > na-now.txt
 # prevent seperation lines from being converted to headlines later
 sed -i 's/          + --------------------------------------------------------------//' na-now.txt
 sed -i 's/            -----------------------------------------------//' na-now.txt
